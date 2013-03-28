@@ -1,0 +1,33 @@
+## Default .htaccess file
+## php_flag short_open_tag on
+
+## encode
+AddDefaultCharset UTF-8
+
+## explore
+DirectoryIndex index.php
+Options -Indexes -MultiViews
+
+## mod_php/~fastcgi...
+# php_flag register_globals off
+# php_flag magic_quotes_gpc off
+# php_flag magic_quotes_sybase off
+# php_flag magic_quotes_runtime off
+# php_value error_reporting 7
+# php_value max_execution_time 300
+## php_value upload_max_filesize 3000000
+## php_value session.use_trans_sid 0
+
+## 404:
+# ErrorDocument 401 /
+# ErrorDocument 403 /
+# ErrorDocument 404 /
+
+## ????
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+# RewriteRule ^/?(.*) http://%1/$1 [L,R=permanent]
+## RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+## RewriteRule . http://%1%{REQUEST_URI} [R,QSA]
+# RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+# RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
