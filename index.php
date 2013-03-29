@@ -202,7 +202,7 @@ REPLY;
 				$stream = talk_stream 
 				(
 					$options['talk']['path'], 
-						&$page, &$pager
+						/*&*/$page, /*&*/$pager
 				);
 
 				if ## добавление порождающей мысли на первую страницу
